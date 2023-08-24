@@ -1,6 +1,7 @@
 package com.learningTech.SpringbootCrudOperation.service;
 
 import com.learningTech.SpringbootCrudOperation.entity.Department01;
+import com.learningTech.SpringbootCrudOperation.error.Department01NotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public interface DepartmentService {
 
   public  List<Department01> fetchAllDetails();
 
-  public Department01 getDepartmentById(Long departmentId);
+  public Department01 getDepartmentById(Long departmentId) throws Department01NotFoundException;
 
     public void deleteDepartmentByID(Long departmentID);
 
