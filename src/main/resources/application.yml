@@ -1,0 +1,69 @@
+spring:
+  profiles:
+    active: prod
+---
+spring:
+  spring:
+    config:
+      activate:
+        on-profile: qa
+  datasource:
+    password: JesusLife@1998
+    url: jdbc:mysql://localhost:3306/dep01_qa
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+welcome:
+  message: welcome to springboot tutorial
+
+---
+
+spring:
+  spring:
+    config:
+      activate:
+        on-profile: prod
+  datasource:
+    password: JesusLife@1998
+    url: jdbc:mysql://localhost:3306/dep01_prod
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+welcome:
+  message: welcome to springboot tutorial
+
+---
+
+spring:
+  spring:
+    config:
+      activate:
+        on-profile: dev
+  datasource:
+    password: JesusLife@1998
+    url: jdbc:mysql://localhost:3306/dep01_dev
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+welcome:
+  message: welcome to springboot tutorial
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+---
